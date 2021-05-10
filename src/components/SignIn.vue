@@ -45,18 +45,18 @@
                     })
             },
        signInWithGoogle(){
-           let provider = new firebase.auth.GoogleAuthProvider();
+           var provider = new firebase.auth.GoogleAuthProvider();
 
            firebase.auth()
-            .signInWithPopup(provider)
+            .signInWithRedirect(provider)
             .then((result) => {
-                /** @type {firebase.auth.OAuthCredential} */
-                var credential = result.credential;
 
                 // This gives you a Google Access Token. You can use it to access the Google API.
-                var token = credential.accessToken;
+                var token = result.credential.accessToken;
                 // The signed-in user info.
                 var user = result.user;
+                console.log(user);
+                this.$router.replace('/hello');
                 // ...
             }).catch((error) => {
                 // Handle Errors here.
