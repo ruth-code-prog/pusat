@@ -57,8 +57,6 @@
                 var token = credential.accessToken;
                 // The signed-in user info.
                 var user = result.user;
-                console.log(user);
-                this.$router.replace('/hello');
                 // ...
             }).catch((error) => {
                 // Handle Errors here.
