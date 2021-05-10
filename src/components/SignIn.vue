@@ -51,7 +51,7 @@
 
 
            firebase.auth()
-            .signInWithRedirect(provider)
+            .signInWithPopup(provider)
             .then((result) => {
 
                 /** @type {firebase.auth.OAuthCredential} */
