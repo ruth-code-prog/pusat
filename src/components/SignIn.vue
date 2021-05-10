@@ -13,7 +13,7 @@
         <hr>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary">Facebook</button>
+                 <button type="button" class="btn btn-primary" @click="signInWithFacebook">Facebook</button>
                 <button type="button" class="btn btn-default" @click="signInWithGoogle">Google</button>
                 <button type="button" class="btn btn-info">Twiter</button>
             </div>
@@ -72,8 +72,36 @@
                 // ...
             });
        }
+    signInWithFacebook(){
+           var provider = new firebase.auth.FacebookAuthProvider();
+
+            firebase.auth()
+            .signInWithPopup(provider)
+            .then((result) => {
+
+                /** @type {firebase.auth.OAuthCredential} */
+                var credential = result.credential;
+
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                console.log(user);
+                this.$router.replace('/hello');
+                // ...
+            }).catch((error) => {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+                // ...
+            });
+          },
+       }
     }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
