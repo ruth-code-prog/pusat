@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <h2>Signin</h2>
-
+        
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
 
             <input type="email" v-model="formData.email" class="form-control" placeholder="email">
@@ -11,13 +11,15 @@
             <button class="btn btn-success" @click="signIn">Signin</button>
         </div>
         <hr>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
+        <v-layout class="center">
+        <div class="row">
             <div class="btn-group">
-                 <button type="button" class="btn btn-primary" @click="signInWithFacebook">Facebook</button>
+                <button type="button" class="btn btn-primary" @click="signInWithFacebook">Facebook</button>
                 <button type="button" class="btn btn-default" @click="signInWithGoogle">Google</button>
                 <button type="button" class="btn btn-info">Twiter</button>
             </div>
         </div>
+        </v-layout>
     </div>
 </template>
 
@@ -47,10 +49,11 @@
        signInWithGoogle(){
            var provider = new firebase.auth.GoogleAuthProvider();
 
+
            firebase.auth()
             .signInWithRedirect(provider)
             .then((result) => {
-            
+
                 /** @type {firebase.auth.OAuthCredential} */
                 var credential = result.credential;
 
@@ -71,8 +74,8 @@
                 var credential = error.credential;
                 // ...
             });
-       }
-    signInWithFacebook(){
+       },
+       signInWithFacebook(){
            var provider = new firebase.auth.FacebookAuthProvider();
 
             firebase.auth()
@@ -99,9 +102,10 @@
                 var credential = error.credential;
                 // ...
             });
-          },
+       },
        }
     }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
