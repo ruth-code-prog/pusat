@@ -15,7 +15,7 @@
         <div class="row">
             <div class="btn-group">
                 <button type="button" class="btn btn-primary" @click="signInWithFacebook">Facebook</button>
-                <button type="button" class="btn btn-default" @click="signInWithGoogle">Google</button>
+                <button type="button" class="btn btn-warning" @click="signInWithGoogle">Google</button>
                 <button type="button" class="btn btn-info">Twiter</button>
             </div>
         </div>
