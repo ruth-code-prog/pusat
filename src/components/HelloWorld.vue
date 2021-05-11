@@ -1,8 +1,8 @@
 <template>
   <div  class="hello">
     <div class="container">
+      <button class="rounded" @click="logout">Logout</button>
       <h3>Movies to watch</h3>
-      <button @click="logout">Logout</button>
       <div class="row">
         <div class=" col-md-6 col-md-offset-3">
             <input type="text" v-model='movie' class="form-control"  @keyup.enter='addMovie'>
@@ -10,7 +10,7 @@
               <li v-for="(movieName,key) in movies" :key='key'>
                 <h3>{{movieName.name}}</h3>
                 <button class="btn btn-xs btn-primary">Edit</button>
-                <button class="btn btn-xs btn-primary" @click='deleteMovie(key)'>Delete</button>
+                <button class="btn btn-xs btn-warning" @click='deleteMovie(key)'>Delete</button>
                 <br><br>
                 <input type="text" v-model="editForm[key]" class="form-control" @keyup.enter='editMovie(key)'>
               </li>
@@ -18,6 +18,7 @@
         </div>
       </div> 
     </div>
+    <img src="./../assets/logo.png">
   </div>
 </template>
 
@@ -88,5 +89,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.container {
+ margin-top: 110px;
 }
 </style>

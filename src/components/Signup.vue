@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <h2>Signup</h2>
+        <h2>Daftar</h2>
 
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
 
@@ -8,7 +8,7 @@
             <br>
             <input type="password" v-model="formData.password" class="form-control" placeholder="password">
             <br>
-            <button class="btn btn-success" @click="signUp">SignUp</button>
+            <button class="btn btn-success" @click="signUp">Daftar</button>
         </div>
 
     </div>
@@ -48,6 +48,7 @@
 <style scoped>
     h1, h2 {
         font-weight: normal;
+        margin-top: 100px;
     }
 
     ul {

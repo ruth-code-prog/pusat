@@ -1,31 +1,32 @@
 <template>
    <div id="app">
 
-    <div class="navbar">
-      <ul class="nav navbar-nav">
+    <nav class="navbar fixed-top navbar-light bg-light">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <button class="rounded">
+          <li>
+            <router-link to="/">wargaNet</router-link>
+          </li>
+          </button>
+          <button class="rounded">
+          <li v-if="!authUser">
+            <router-link to="/sign-in">SignIn</router-link>
+          </li>
+          </button>
 
-        <li>
-           <router-link to="/">VueFire</router-link>
+          <button class="rounded">
+          <li v-if="!authUser">
+            <router-link to="/sign-up">SignUp</router-link>
+          </li>
+          </button>
+          <li v-if="authUser">
+            <a @click="logout"> Logout</a>
+            <a href="#">{{authUser.identifier}}</a>
         </li>
-        <li v-if="!authUser">
-          <router-link to="/sign-in">SignIn</router-link>
-        </li>
-
-        <li v-if="!authUser">
-          <router-link to="/sign-up">SignUp</router-link>
-        </li>
-
-        <li v-if="authUser">
-          <a @click="logout"> Logout</a>
-          <a href="#">{{authUser.identifier}}</a>
-
-       </li>
-      </ul>
-
-
-    </div>
-
-    <img src="./assets/logo.png">
+        </ul>
+      </div>
+    </nav>
     <router-view/>
   </div>
 </template>
