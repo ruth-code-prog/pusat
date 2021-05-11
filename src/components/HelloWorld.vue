@@ -8,19 +8,19 @@
        </v-layout>
 
       <div class="row">
-        <div class=" col-md-6 col-md-offset-3">
           <h4>Komentar wargaNet untuk membangun Indonesia</h4>
             <input type="text" v-model='movie' class="form-control"  @keyup.enter='addMovie'>
-            <ul>
-              <li v-for="(movieName,key) in movies" :key='key'>
-                <h3>{{movieName.name}}</h3>
-                <button class="btn btn-xs btn-primary">Edit</button>
-                <button class="btn btn-xs btn-warning" @click='deleteMovie(key)'>Delete</button>
-                <br><br>
-                <input type="text" v-model="editForm[key]" class="form-control" @keyup.enter='editMovie(key)'>
-              </li>
-            </ul>
-        </div>
+             <v-layout align-center justify-center row wrap>
+              <ul>
+                <li v-for="(movieName,key) in movies" :key='key'>
+                  <h6>{{movieName.name}}</h6>
+                  <button class="btn btn-xs btn-primary">Edit</button>
+                  <button class="btn btn-xs btn-warning" @click='deleteMovie(key)'>Delete</button>
+                  <br><br>
+                  <input type="text" v-model="editForm[key]" class="form-control" @keyup.enter='editMovie(key)'>
+                </li>
+              </ul>
+            </v-layout>
       </div> 
     </div>
     <img src="./../assets/logo.png">
@@ -28,8 +28,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: 'HelloWorld',
   data () {
@@ -47,7 +45,6 @@ export default {
       .catch((error)=>{console.log(error)})
       ;
   },
-
    logout(){
     firebase.auth().signOut()
     .then(()=>{
@@ -57,23 +54,19 @@ export default {
       alert(e.message);
     })
   },
-
   editMovie(key){
     firebase.database().ref('movies/'+key).set({
       name:this.editForm[key]
     });
     this.editForm=[];
   },
-
   deleteMovie(key){
     firebase.database().ref('movies/'+key).remove();
   }
 },
 created(){
    firebase.database().ref('movies').on('value',(snapshot)=>{
-
      this.movies=snapshot.val();
-
    });
  },
  playVideo() {
@@ -88,9 +81,6 @@ created(){
     }
   }
 }
-
-
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
