@@ -48,7 +48,7 @@
 <style scoped>
     h1, h2 {
         font-weight: normal;
-        margin-top: 100px;
+        margin-top: 120px;
     }
 
     ul {
