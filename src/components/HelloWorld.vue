@@ -2,9 +2,14 @@
   <div  class="hello">
     <div class="container">
       <button class="rounded" @click="logout">Logout</button>
-      <h3>Movies to watch</h3>
+      <h3>Info Terbaru di Indonesia</h3>
+       <v-layout align-center justify-center row wrap>
+          <youtube :video-id="videoId7" ref="youtube" @playing="playing" width="360px"></youtube>
+       </v-layout>
+
       <div class="row">
         <div class=" col-md-6 col-md-offset-3">
+          <h4>Komentar wargaNet untuk membangun Indonesia</h4>
             <input type="text" v-model='movie' class="form-control"  @keyup.enter='addMovie'>
             <ul>
               <li v-for="(movieName,key) in movies" :key='key'>
@@ -31,7 +36,8 @@ export default {
     return {
       movie: null,
       movies:{},
-      editForm:[]
+      editForm:[],
+      videoId7: 'CHwVTzYl4nU',
     }
   },
   methods:{
@@ -69,8 +75,21 @@ created(){
      this.movies=snapshot.val();
 
    });
- }
+ },
+ playVideo() {
+      this.player.playVideo()
+    },
+    playing() {
+     // console.log('\o/ we are watching!!!')
+    },
+   computed: {
+    player() {
+      return this.$refs.youtube.player
+    }
+  }
 }
+
+
 
 </script>
 
@@ -91,6 +110,7 @@ a {
   color: #42b983;
 }
 .container {
- margin-top: 110px;
+ margin-top: 140px;
+ padding-left: 0px;
 }
 </style>
