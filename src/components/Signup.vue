@@ -2,14 +2,14 @@
     <div class="row">
         <h2>Daftar</h2>
 
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
+         <v-layout align-center justify-center row wrap>
 
             <input type="email" v-model="formData.email" class="form-control" placeholder="email">
             <br>
             <input type="password" v-model="formData.password" class="form-control" placeholder="password">
             <br>
             <button class="btn btn-success" @click="signUp">Daftar</button>
-        </div>
+         </v-layout>
 
     </div>
 </template>
