@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import SignIn from '@/components/SignIn'
 import Signup from '@/components/Signup'
+import VueYoutube from 'vue-youtube'
+
+Vue.use(VueYoutube)
 
 Vue.use(Router)
 
