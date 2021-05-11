@@ -19,6 +19,8 @@
                 <button type="button" class="btn btn-info">Twiter</button>
             </div>
         </div>
+        <img src="./../assets/indo.jpg" style="height: 160px;" class="rounded float-left" alt="">
+        </v-layout>
         </v-layout>
     </div>
 </template>
