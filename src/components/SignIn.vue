@@ -104,6 +104,7 @@
 <style scoped>
     h1, h2 {
         font-weight: normal;
+        margin-top: 150px;
     }
 
     ul {
