@@ -25,6 +25,7 @@
             <a href="#">{{authUser.identifier}}</a>
         </li>
         </ul>
+        <img src="./assets/indonesia.png" style="height: 100px;" class="rounded float-left" alt="">
       </div>
     </nav>
     <router-view/>
