@@ -24,18 +24,6 @@
       </div> 
     </div>
     <img src="./../assets/logo.png">
-    <h5>Kebijakan Privasi wargaNet</h5>
-    <h6> Nama: Eko Setiaji (Selaku Founder wargaNet</h6>
-    <h6> Biodata dan profile: https://ekosetiaji.my.id </h6>
-    <h4> Informasi Legal wargaNet </h4>
-    <h6> Jika Anda tinggal di Wilayah Indonesia, Layanan disediakan untuk Anda oleh wargaNet ("wargaNet", "milik kami", "kami", atau "kita") berdasarkan Ketentuan Layanan dan Kebijakan Privasi.</h6>
-    <h6> Kebijakan Privasi ("Kebijakan Privasi") kami membantu menjelaskan praktik data kami, termasuk informasi yang kami proses untuk menyediakan Layanan kami. </h6>
-    <h6> Misalnya, Kebijakan Privasi kami membahas mengenai informasi apa yang kami kumpulkan dan bagaimana hal ini memengaruhi Anda. Kebijakan Privasi juga menjelaskan langkah-langkah yang kami ambil untuk melindungi privasi Anda, seperti mengembangkan Layanan kami agar pesan yang telah tersampaikan tidak disimpan oleh kami dan memberikan Anda kendali dengan siapa Anda berkomunikasi menggunakan Layanan kami.</h6>
-    <h6> Kebijakan Privasi ini berlaku bagi semua Layanan kami kecuali ditentukan sebaliknya.</h6>
-    <h6> Informasi yang Kami Kumpulkan
-WhatsApp harus menerima atau mengumpulkan sebagian informasi untuk menjalankan, menyediakan, meningkatkan, memahami, menyesuaikan, mendukung, dan memasarkan Layanan kami, termasuk saat Anda memasang, mengakses, atau menggunakan Layanan kami.
-
-Jenis informasi yang kami terima dan kumpulkan tergantung pada cara Anda menggunakan Layanan kami. Kami memerlukan informasi tertentu untuk memberikan Layanan kami, dan tanpa informasi tersebut, kami tidak dapat memberikan Layanan kepada Anda. Misalnya, Anda harus memverfikasi email yang Kami kirim saat mendaftar di wargaNet</h6>
   </div>
 </template>
 
