@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <h2>Signin</h2>
+        <h2>Masuk</h2>
         
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
 
@@ -8,7 +8,7 @@
             <br>
             <input type="password" v-model="formData.password" class="form-control" placeholder="password">
             <br>
-            <button class="btn btn-success" @click="signIn">Signin</button>
+            <button class="btn btn-success" @click="signIn">Masuk</button>
         </div>
         <hr>
         <v-layout class="center">
