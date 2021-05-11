@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <h2>Masuk</h2>
+        <h2>Signin</h2>
         
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
 
@@ -8,7 +8,7 @@
             <br>
             <input type="password" v-model="formData.password" class="form-control" placeholder="password">
             <br>
-            <button class="btn btn-success" @click="signIn">Masuk</button>
+            <button class="btn btn-success" @click="signIn">Signin</button>
         </div>
         <hr>
         <v-layout class="center">
@@ -47,9 +47,9 @@
                     })
             },
        signInWithGoogle(){
-            const provider = new firebase.auth.GoogleAuthProvider();
-            provider.addScope('email');
-            firebase
+               const provider = new firebase.auth.GoogleAuthProvider();
+                provider.addScope('email');
+                firebase
                 .auth()
                 .signInWithPopup(provider)
                 .then(() => {
@@ -104,7 +104,6 @@
 <style scoped>
     h1, h2 {
         font-weight: normal;
-        margin-top: 100px;
     }
 
     ul {
