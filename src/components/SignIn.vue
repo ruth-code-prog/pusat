@@ -47,21 +47,13 @@
                     })
             },
        signInWithGoogle(){
-           var provider = new firebase.auth.GoogleAuthProvider();
-
-
-           firebase.auth()
-            .signInWithPopup(provider)
-            .then((result) => {
-
-                /** @type {firebase.auth.OAuthCredential} */
-                var credential = result.credential;
-
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                var token = result.credential.accessToken;
-                // The signed-in user info.
-                var user = result.user;
-                console.log(user);
+               const provider = new firebase.auth.GoogleAuthProvider();
+                provider.addScope('email');
+                firebase
+                .auth()
+                .signInWithPopup(provider)
+                .then(() => {
+                //console.log("homeGoogle",provider);
                 this.$router.replace('/hello');
                 // ...
             }).catch((error) => {
