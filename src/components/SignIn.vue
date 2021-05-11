@@ -12,15 +12,7 @@
          </v-layout>
         <hr>
         <v-layout class="center">
-        <div class="row">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary" @click="signInWithFacebook">Facebook</button>
-                <button type="button" class="btn btn-warning" @click="signInWithGoogle">Google</button>
-                <button type="button" class="btn btn-info">Twiter</button>
-            </div>
-        </div>
         <img src="./../assets/indo.jpg" style="height: 160px;" class="rounded float-left" alt="">
-        </v-layout>
         </v-layout>
     </div>
 </template>
@@ -48,57 +40,8 @@
                         alert(e.message)
                     })
             },
-       signInWithGoogle(){
-            const provider = new firebase.auth.GoogleAuthProvider();
-            provider.addScope('email');
-            firebase
-                .auth()
-                .signInWithPopup(provider)
-                .then(() => {
-                //console.log("homeGoogle",provider);
-                this.$router.replace('/hello');
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // The email of the user's account used.
-                var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                var credential = error.credential;
-                // ...
-            });
-       },
-       signInWithFacebook(){
-           var provider = new firebase.auth.FacebookAuthProvider();
-
-            firebase.auth()
-            .signInWithPopup(provider)
-            .then((result) => {
-
-                /** @type {firebase.auth.OAuthCredential} */
-                var credential = result.credential;
-
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                var token = result.credential.accessToken;
-                // The signed-in user info.
-                var user = result.user;
-                console.log(user);
-                this.$router.replace('/hello');
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // The email of the user's account used.
-                var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                var credential = error.credential;
-                // ...
-            });
-       },
+          },
        }
-    }
 
 </script>
 
