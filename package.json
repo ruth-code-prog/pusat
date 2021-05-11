@@ -12,7 +12,9 @@
   "dependencies": {
     "firebase": "^8.5.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-youtube": "^1.4.0",
+    "youtube-vue3": "^0.1.10"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
