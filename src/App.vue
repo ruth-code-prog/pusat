@@ -11,13 +11,13 @@
           </button>
           <button class="rounded">
           <li v-if="!authUser">
-            <router-link to="/sign-in">SignIn</router-link>
+            <router-link to="/sign-in">Masuk</router-link>
           </li>
           </button>
 
           <button class="rounded">
           <li v-if="!authUser">
-            <router-link to="/sign-up">SignUp</router-link>
+            <router-link to="/sign-up">Daftar</router-link>
           </li>
           </button>
           <li v-if="authUser">
