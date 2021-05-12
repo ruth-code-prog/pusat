@@ -1,9 +1,9 @@
 <template>
    <div id="app">
 
-    <nav class="navbar fixed-top navbar-light bg-light">
+    <nav class="navbar fixed-top navbar navbar-dark bg-info navbar-expand">
       <div class="container-fluid">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav nav-justified w-100">
           <button class="rounded">
             <router-link to="/">wargaNet</router-link>
           </button>
@@ -13,8 +13,6 @@
           <button class="rounded" v-if="!authUser">
             <router-link to="/sign-up">Daftar</router-link>
           </button>
-        </ul>
-        <ul>
           <button v-if="authUser" class="rounded" @click="logout">Logout
             <a href="#">{{authUser.identifier}}</a>
           </button>
