@@ -25,6 +25,12 @@
             <a href="#">{{authUser.identifier}}</a>
         </li>
         </ul>
+        <ul>
+          <li v-if="authUser">
+            <button class="rounded" @click="logout">Logout</button>
+            <a href="#">{{authUser.identifier}}</a>
+          </li>
+        </ul>
         <img src="./assets/indonesia.png" style="height: 100px;" class="rounded float-left" alt="">
       </div>
     </nav>
@@ -33,12 +39,33 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      authUser:null
+    }
+  },
+  watch:{
+    '$route':'setAuthUser'
+  },
+  methods:{
+    setAuthUser(){
+      this.authUser=firebase.auth().currentUser;
+    },
+    logout(){
+      firebase.auth().signOut()
+        .then(()=>{
+          this.$router.replace('/sign-in')
+        })
+        .catch((e)=>{
+          alert(e.message)
+        })
+    }
+  },
+  created(){
+    this.setAuthUser();
+    // this.authUser=firebase.auth().currentUser;
   }
 }
 </script>
