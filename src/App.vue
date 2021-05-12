@@ -20,10 +20,6 @@
             <router-link to="/sign-up">Daftar</router-link>
           </li>
           </button>
-          <li v-if="authUser">
-            <a @click="logout"> Logout</a>
-            <a href="#">{{authUser.identifier}}</a>
-        </li>
         </ul>
         <ul>
           <li v-if="authUser">
