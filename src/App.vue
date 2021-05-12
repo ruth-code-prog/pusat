@@ -5,27 +5,19 @@
       <div class="container-fluid">
         <ul class="nav navbar-nav">
           <button class="rounded">
-          <li>
             <router-link to="/">wargaNet</router-link>
-          </li>
           </button>
-          <button class="rounded">
-          <li v-if="!authUser">
+          <button class="rounded" v-if="!authUser">
             <router-link to="/sign-in">Masuk</router-link>
-          </li>
           </button>
-
-          <button class="rounded">
-          <li v-if="!authUser">
+          <button class="rounded" v-if="!authUser">
             <router-link to="/sign-up">Daftar</router-link>
-          </li>
           </button>
         </ul>
         <ul>
-          <li v-if="authUser">
-            <button class="rounded" @click="logout">Logout</button>
+          <button v-if="authUser" class="rounded" @click="logout">Logout
             <a href="#">{{authUser.identifier}}</a>
-          </li>
+          </button>
         </ul>
         <img src="./assets/indonesia.png" style="height: 100px;" class="rounded float-left" alt="">
       </div>
