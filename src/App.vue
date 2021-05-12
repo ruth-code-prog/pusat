@@ -20,6 +20,17 @@
         <img src="./assets/indonesia.png" style="height: 100px;" class="rounded float-left" alt="">
       </div>
     </nav>
+    
+    <nav v-if="authUser" class="navbar navbar-dark bg-info fixed-bottom">
+      <v-layout class="center">
+      <ul class="navbar-nav nav-justified w-75">
+          <div>
+            <span class="name user" style="">Hai...{{authUser.email}}</span>
+          </div>
+      </ul>
+      </v-layout>
+    </nav>
+    
     <router-view/>
   </div>
 </template>
