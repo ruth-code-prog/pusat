@@ -3,7 +3,7 @@
 
     <nav class="navbar fixed-top navbar navbar-dark bg-info navbar-expand">
       <div class="container-fluid">
-        <ul class="navbar-nav nav-justified w-100">
+        <ul class="navbar-nav nav-justified w-100 h-75">
           <button class="rounded">
             <router-link to="/">wargaNet</router-link>
           </button>
@@ -23,7 +23,7 @@
     
     <nav v-if="authUser" class="navbar navbar-dark bg-info fixed-bottom">
       <v-layout class="center">
-      <ul class="navbar-nav nav-justified w-75">
+      <ul class="navbar-nav nav-justified h-25 w-100">
           <div>
             <span class="name user" style="">Hai...{{authUser.email}}</span>
           </div>
