@@ -17,7 +17,7 @@
             <a href="#">{{authUser.identifier}}</a>
           </button>
         </ul>
-        <img src="./assets/indonesia.png" style="height: 100px;" class="rounded float-left" alt="">
+        <img src="./assets/indonesia.png" style="height: 80px;" class="rounded float-left" alt="">
       </div>
     </nav>
     
