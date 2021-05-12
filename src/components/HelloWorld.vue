@@ -1,7 +1,6 @@
 <template>
   <div  class="hello">
     <div class="container">
-      <button class="rounded" @click="logout">Logout</button>
       <h3>Info Terbaru di Indonesia</h3>
        <v-layout align-center justify-center row wrap>
           <youtube :video-id="videoId7" ref="youtube" @playing="playing" width="360px"></youtube>
@@ -44,15 +43,6 @@ export default {
       .then((data)=>{console.log(data)})
       .catch((error)=>{console.log(error)})
       ;
-  },
-   logout(){
-    firebase.auth().signOut()
-    .then(()=>{
-      this.$router.replace('/sign-in');
-    })
-    .catch((e)=>{
-      alert(e.message);
-    })
   },
   editMovie(key){
     firebase.database().ref('movies/'+key).set({
